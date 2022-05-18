@@ -42,6 +42,7 @@ public class EnemyStats : CharacterStats
             currentHealth = 0;
             animator.PlayTargetAnimation("Dead_01", true);
             isDead = true;
+            Destroy(gameObject,2);
         }
     }
 }
