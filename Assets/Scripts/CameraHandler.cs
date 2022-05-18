@@ -213,8 +213,7 @@ public class CameraHandler : MonoBehaviour
         else
         {
             if (currentLockOnTarget == null) {
-                inputmanager.lockOnFlag == false;
-                return;
+                inputmanager.lockOnFlag = false;
             }
             else {
                 float velocity = 0;
