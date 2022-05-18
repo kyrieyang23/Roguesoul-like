@@ -35,9 +35,11 @@ public class DamageCollider : MonoBehaviour
         }
         if (other.tag == "Enemy")
         {
+            Debug.Log("yes");
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
             if (enemyStats != null)
             {
+                Debug.Log("yes2");
                 enemyStats.TakeDamage(currentWeaponDamage);
             }
         }

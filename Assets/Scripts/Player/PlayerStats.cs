@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     // Start is called before the first frame update
-    HealthBar healthBar;
+    public HealthBar healthBar;
     PlayerManager playerManager;
 
     StaminaBar staminaBar;
@@ -16,7 +16,6 @@ public class PlayerStats : CharacterStats
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
-        healthBar = FindObjectOfType<HealthBar>();
         staminaBar = FindObjectOfType<StaminaBar>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
     }
@@ -53,7 +52,6 @@ public class PlayerStats : CharacterStats
             return;
 
         currentHealth = currentHealth - damage;
-        Debug.Log(currentHealth);
         healthBar.SetCurrentHealth(currentHealth);
 
         animatorHandler.PlayTargetAnimation("BodyHit", true);
