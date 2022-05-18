@@ -16,7 +16,6 @@ public class EnemyHealthBar : MonoBehaviour
 
     public void SetHealth(int health)
     {
-        Debug.Log(health+"EEEE");
         slider.value = health;
         timeUntilBarIsHidden = 3;
     }
@@ -40,10 +39,8 @@ public class EnemyHealthBar : MonoBehaviour
             }
             else
             {
-                Debug.Log("hearerere");
                 if (!slider.gameObject.activeInHierarchy)
                 {
-                    Debug.Log("hearerere");
                     slider.gameObject.SetActive(true);
                 }
             }
