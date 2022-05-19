@@ -3939,6 +3939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 782319081856782337}
   - component: {fileID: 782319081856782342}
+  - component: {fileID: 8596042999293500007}
+  - component: {fileID: 7588312210001647856}
   m_Layer: 7
   m_Name: Torso
   m_TagString: Untagged
@@ -4023,6 +4025,32 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.29946756, y: 0.08153567, z: -0.000000044703484}
     m_Extent: {x: 0.3700924, y: 0.30952263, z: 0.25008196}
   m_DirtyAABB: 0
+--- !u!65 &8596042999293500007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782319081856782336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3624192, y: 0.6723129, z: 0.27540526}
+  m_Center: {x: 0.0025068037, y: 1.1609455, z: -0.0032257591}
+--- !u!114 &7588312210001647856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782319081856782336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc872f1ce45b4a2fa51b6b62b14368f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponDamage: 25
 --- !u!1 &782319081871870543
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
             if ((lastAttack == weapon.OH_Light_Attack_01) && (inputManager.lattackInput))
             {
                 weaponSlotManager.attackingWeapon = weapon;
+                weaponSlotManager.DrainStaminaLightAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Light_Attack_02, true);
                 lastAttack = weapon.OH_Light_Attack_02;
                 Debug.Log("Light Attack 2");
@@ -46,11 +47,13 @@ public class PlayerAttack : MonoBehaviour
             else if ((lastAttack == weapon.OH_Light_Attack_02) && (inputManager.lattackInput))
             {
                 weaponSlotManager.attackingWeapon = weapon;
+                weaponSlotManager.DrainStaminaLightAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Light_Attack_03, true);
             }
             else if ((lastAttack == weapon.OH_Heavy_Attack_01) && (inputManager.hattackInput))
             {
                 weaponSlotManager.attackingWeapon = weapon;
+                weaponSlotManager.DrainStaminaHeavyAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_02, true);
                 lastAttack = weapon.OH_Heavy_Attack_02;
                 Debug.Log("Heavy Attack 2");
@@ -58,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
             else if ((lastAttack == weapon.OH_Heavy_Attack_02) && (inputManager.hattackInput))
             {
                 weaponSlotManager.attackingWeapon = weapon;
+                weaponSlotManager.DrainStaminaHeavyAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_03, true);
             }
         }
@@ -70,6 +74,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         weaponSlotManager.attackingWeapon = weapon;
+        weaponSlotManager.DrainStaminaLightAttack();
         animationHandler.PlayTargetAnimation(weapon.OH_Light_Attack_01, true);
         lastAttack = weapon.OH_Light_Attack_01;
     }
@@ -81,6 +86,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         weaponSlotManager.attackingWeapon = weapon;
+        weaponSlotManager.DrainStaminaHeavyAttack();
         animationHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_01, true);
         lastAttack = weapon.OH_Heavy_Attack_01;
     }

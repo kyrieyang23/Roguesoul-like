@@ -104,7 +104,7 @@ public class InputManager : MonoBehaviour
         SprintInput();
         HandleRollInput(delta);
         AttackInput(delta);
-        HandleQuickSlotsInput();
+        // HandleQuickSlotsInput();
         HandleInteractingButtonInput();
         HandleLockOnInput();
     }
@@ -178,8 +178,6 @@ public class InputManager : MonoBehaviour
 
     private void HandleQuickSlotsInput()
     {
-
-
         if (d_Pad_Right)
         {
             playerInventory.ChangeRightWeapon();
