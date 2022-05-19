@@ -27,8 +27,10 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        rightWeapon = unarmedWeapon;
-        leftWeapon = unarmedWeapon;
+        // rightWeapon = unarmedWeapon;
+        // leftWeapon = unarmedWeapon;
+        ChangeRightWeapon();
+        ChangeLeftWeapon();
     }
 
     public void ChangeRightWeapon()

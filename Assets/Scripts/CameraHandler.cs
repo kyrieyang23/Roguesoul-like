@@ -212,24 +212,29 @@ public class CameraHandler : MonoBehaviour
         }
         else
         {
-            float velocity = 0;
+            if (currentLockOnTarget == null) {
+                inputmanager.lockOnFlag = false;
+            }
+            else {
+                float velocity = 0;
 
-            Vector3 dir = currentLockOnTarget.position - transform.position;
-            dir.Normalize();
-            dir.y = 0;
+                Vector3 dir = currentLockOnTarget.position - transform.position;
+                dir.Normalize();
+                dir.y = 0;
 
-            Quaternion targetRotation = Quaternion.LookRotation(dir);
-            transform.rotation = targetRotation;
+                Quaternion targetRotation = Quaternion.LookRotation(dir);
+                transform.rotation = targetRotation;
 
-            dir = currentLockOnTarget.position - cameraPivotTransform.position;
-            dir.Normalize();
+                dir = currentLockOnTarget.position - cameraPivotTransform.position;
+                dir.Normalize();
 
 
-            targetRotation = Quaternion.LookRotation(dir);
-            Vector3 eulerAngle = targetRotation.eulerAngles;
-            // eulerAngle.x = 6;
-            eulerAngle.y = 0;
-            cameraPivotTransform.localEulerAngles = eulerAngle;
+                targetRotation = Quaternion.LookRotation(dir);
+                Vector3 eulerAngle = targetRotation.eulerAngles;
+                // eulerAngle.x = 6;
+                eulerAngle.y = 0;
+                cameraPivotTransform.localEulerAngles = eulerAngle;
+            }
         }
     }
     public void SetCameraHeight()
