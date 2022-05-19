@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
         playerManager = GetComponentInParent<PlayerManager>();
         playerInventory = GetComponentInParent<PlayerInventory>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
-        inputManager = GetComponent<InputManager>();
+        inputManager = GetComponentInParent<InputManager>();
         playerStats = GetComponentInParent<PlayerStats>();
     }
 

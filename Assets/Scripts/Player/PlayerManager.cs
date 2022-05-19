@@ -42,7 +42,6 @@ public class PlayerManager : CharacterManager
         canDoCombo = anim.GetBool("canDoCombo");
         isUsingRightHand = anim.GetBool("isUsingRightHand");
         isUsingLeftHand = anim.GetBool("isUsingLeftHand");
-
         inputManager.HandleAllInputs(delta);
         playerLocomotion.IsSprinting();
         playerLocomotion.IsRolling(delta);

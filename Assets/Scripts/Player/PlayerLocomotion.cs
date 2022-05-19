@@ -72,7 +72,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         float delta = Time.deltaTime;
 
-        inputManager.HandleAllInputs(delta); //recieve input in InputManager
+        // inputManager.HandleAllInputs(delta); //recieve input in InputManager
         IsRolling(delta);
         if (!animatorHandler.anim.GetBool("isInteracting")) //player don't move while rolling
         {
