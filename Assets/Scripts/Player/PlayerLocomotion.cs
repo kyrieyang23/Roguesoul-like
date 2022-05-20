@@ -71,6 +71,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void Update()
     {
         float delta = Time.deltaTime;
+        Debug.Log(normalVector);
 
         // inputManager.HandleAllInputs(delta); //recieve input in InputManager
         IsRolling(delta);
@@ -208,6 +209,10 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (playerManager.isInAir)
         {
+            if(inAirTimer < 2)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.forward * 100f);
+            }
             GetComponent<CapsuleCollider>().height = 1.2f;
             // falling at set speed
             GetComponent<Rigidbody>().AddForce(-Vector3.up * fallingSpeed);
@@ -280,6 +285,11 @@ public class PlayerLocomotion : MonoBehaviour
             if (playerManager.isInteracting || inputManager.moveAmount > 0)
             {
                 myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
+            }
+            else if (normalVector != Vector3.up)
+            {
+                // GetComponent<Rigidbody>().useGravity = false;
+                return;
             }
             else
             {

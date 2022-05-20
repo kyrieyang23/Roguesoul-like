@@ -46,7 +46,7 @@ public class PlayerManager : CharacterManager
         playerLocomotion.IsSprinting();
         playerLocomotion.IsRolling(delta);
         CheckForInteractableObject();
-        playerLocomotion.HandleMoving(delta);
+        // playerLocomotion.HandleMoving(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         playerStats.RegenerateStamina();
     }
