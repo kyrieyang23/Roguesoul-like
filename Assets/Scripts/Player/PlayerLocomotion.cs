@@ -71,7 +71,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void Update()
     {
         float delta = Time.deltaTime;
-        Debug.Log(normalVector);
+        // Debug.Log(normalVector);
 
         // inputManager.HandleAllInputs(delta); //recieve input in InputManager
         IsRolling(delta);

@@ -17,6 +17,7 @@ public class EnemyLocomotionManager : MonoBehaviour
 
     public CapsuleCollider characterCollider;
     public CapsuleCollider characterCollisionBlockerCollider;
+    Vector3 normalVector;
 
     private void Awake()
     {
@@ -30,6 +31,12 @@ public class EnemyLocomotionManager : MonoBehaviour
         if (Physics.Raycast(raycastOrigin, -Vector3.up, out hit, rayDistance, groundLayer))
         {
             Debug.DrawLine(raycastOrigin, hit.point, Color.red);
+            normalVector = hit.normal;
+            if (normalVector != Vector3.up)
+            {
+                Vector3 projectedVelocity = Vector3.ProjectOnPlane(Rigidbody.velocity * 20, normalVector);
+                Rigidbody.AddForce(projectedVelocity);
+            }
             inAirTimer = 0;
         }
         else
@@ -38,6 +45,7 @@ public class EnemyLocomotionManager : MonoBehaviour
             inAirTimer = inAirTimer + Time.deltaTime;
             Rigidbody.AddForce(-Vector3.up * fallingVel * inAirTimer);
         }
+        // Debug.Log(Rigidbody.velocity);
     }
     private void Start()
     {

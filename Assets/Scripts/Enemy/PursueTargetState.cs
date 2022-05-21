@@ -5,7 +5,6 @@ using UnityEngine;
 public class PursueTargetState : State
 {
     public CombatStanceState combatStanceState;
-
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnermyAnimationHandler enemyAnimationManager)
     {
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
