@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class WeaponSlotManager : MonoBehaviour
 {
@@ -64,20 +65,22 @@ public class WeaponSlotManager : MonoBehaviour
 
     public void OpenDamageCollider()
     {
-        if (playerManager.isUsingRightHand)
-        {
-            rightHandDamageCollider.EnableDamageCollider();
-        }
-        else if (playerManager.isUsingLeftHand)
-        {
-            leftHandDamageCollider.EnableDamageCollider();
-        }
+        // if (playerManager.isUsingRightHand)
+        // {
+        //     rightHandDamageCollider.EnableDamageCollider();
+        // }
+        // else if (playerManager.isUsingLeftHand)
+        // {
+        //     leftHandDamageCollider.EnableDamageCollider();
+        // }
+
+        rightHandDamageCollider.EnableDamageCollider();
     }
 
     public void CloseDamageCollider()
     {
         rightHandDamageCollider.DisableDamageCollider();
-        leftHandDamageCollider.DisableDamageCollider();
+        // leftHandDamageCollider.DisableDamageCollider();
     }
     public void DrainStaminaLightAttack()
     {

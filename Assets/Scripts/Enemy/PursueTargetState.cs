@@ -5,8 +5,16 @@ using UnityEngine;
 public class PursueTargetState : State
 {
     public CombatStanceState combatStanceState;
+
+    public IdleState idleState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnermyAnimationHandler enemyAnimationManager)
     {
+        if(enemyStats.isDead)
+        {
+            enemyManager.navmeshAgent.transform.localPosition = Vector3.zero; 
+            enemyManager.navmeshAgent.enabled = false;
+            return idleState;
+        }
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
         float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
@@ -21,6 +29,7 @@ public class PursueTargetState : State
         
         if (distanceFromTarget <= enemyManager.maximumAttackRange)
         {
+            enemyManager.navmeshAgent.transform.localPosition = Vector3.zero; 
             enemyManager.navmeshAgent.enabled = false;
             return combatStanceState;
         }

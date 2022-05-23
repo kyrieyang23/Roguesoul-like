@@ -19,7 +19,7 @@ public class CameraHandler : MonoBehaviour
 
     public static CameraHandler singleton;
 
-    public float lookSpeed = 0.1f;
+    public float lookSpeed = 0.1f; //actually expected travel distance per sec
     public float followSpeed = 0.1f;
     public float pivotSpeed = 0.03f;
 
@@ -62,9 +62,16 @@ public class CameraHandler : MonoBehaviour
         enviromentLayer = LayerMask.NameToLayer("Environment");
     }
 
+    private void Update() {
+        Debug.DrawLine(transform.position, cameraPivotTransform.position, Color.red);
+        Debug.DrawLine(cameraPivotTransform.position, cameraTransform.position, Color.red);
+    }
+
     public void FollowTarget(float delta)
     {
-        Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
+        float t = delta/followSpeed;
+        Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, t);
+        // Vector3 targetPosition = Vector3.Lerp(myTransform.position, targetTransform.position, followSpeed);
         myTransform.position = targetPosition;
 
         HandleCameraCollisions(delta);

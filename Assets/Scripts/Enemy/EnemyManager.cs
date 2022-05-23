@@ -7,13 +7,11 @@ public class EnemyManager : CharacterManager
 {
     EnemyLocomotionManager enemyLocomotionManager;
     EnermyAnimationHandler enemyAnimationManager;
-    EnemyStats enemyStats;
-
+    public EnemyStats enemyStats;
     public NavMeshAgent navmeshAgent;
     public State currentState;
     public CharacterStats currentTarget;
     public Rigidbody enemyRigidBody;
-
     public bool isPreformingAction;
     public bool isInteracting;
     public float stoppingDistance = 1f;
@@ -64,7 +62,6 @@ public class EnemyManager : CharacterManager
         if (currentState != null)
         {
             State nextState = currentState.Tick(this, enemyStats, enemyAnimationManager);
-
             if (nextState != null)
             {
                 SwitchToNextState(nextState);

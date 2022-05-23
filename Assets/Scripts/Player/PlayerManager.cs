@@ -38,6 +38,7 @@ public class PlayerManager : CharacterManager
     void Update()
     {
         float delta = Time.deltaTime;
+
         isInteracting = anim.GetBool("isInteracting");
         canDoCombo = anim.GetBool("canDoCombo");
         isUsingRightHand = anim.GetBool("isUsingRightHand");
@@ -53,7 +54,7 @@ public class PlayerManager : CharacterManager
 
     private void FixedUpdate()
     {
-        float delta = Time.fixedDeltaTime;
+        // float delta = Time.fixedDeltaTime;
 
         // there's ongoing bug that make player won't move during animation when turned on interpolated is player rigidbody
         // playerLocomotion.HandleMoving(delta);

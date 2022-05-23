@@ -57,16 +57,16 @@ public class InputManager : MonoBehaviour
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
     }
 
-    private void FixedUpdate()
-    {
-        float delta = Time.fixedDeltaTime;
+    // private void FixedUpdate()
+    // {
+    //     float delta = Time.fixedDeltaTime;
 
-        if (cameraHandler != null)
-        {
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-        }
-    }
+    //     if (cameraHandler != null)
+    //     {
+    //         cameraHandler.FollowTarget(delta);
+    //         cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+    //     }
+    // }
 
     private void OnEnable()
     {

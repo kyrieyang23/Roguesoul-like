@@ -30,11 +30,11 @@ public class IdleState : State
         //         }
         //     }
         // }
-        enemyManager.currentTarget = GameObject.Find("Player").GetComponent<CharacterStats>();
         #endregion
+        enemyManager.currentTarget = GameObject.Find("Player").GetComponent<CharacterStats>();
         
         #region handle state switching
-        if (enemyManager.currentTarget != null)
+        if (enemyManager.currentTarget != null && !enemyManager.enemyStats.isDead)
         {
             // return this;
             return pursueTargetState;

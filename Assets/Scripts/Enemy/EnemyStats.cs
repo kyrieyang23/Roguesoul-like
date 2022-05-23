@@ -7,6 +7,7 @@ public class EnemyStats : CharacterStats
     // Start is called before the first frame update
     EnermyAnimationHandler animator;
     public EnemyHealthBar enemyHealthBar;
+
     private void Awake()
     {
         animator = GetComponentInChildren<EnermyAnimationHandler>();
