@@ -75,7 +75,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         // inputManager.HandleAllInputs(delta); //recieve input in InputManager
         IsRolling(delta);
-        if (!animatorHandler.anim.GetBool("isInteracting")) //player don't move while rolling
+        if (!animatorHandler.anim.GetBool("isInteracting") && inAirTimer == 0) //player don't move while rolling
         {
 
             IsSprinting();
@@ -211,7 +211,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             if(inAirTimer < 2)
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.forward * 100f);
+                GetComponent<Rigidbody>().AddForce(moveDirection * 20f);
             }
             GetComponent<CapsuleCollider>().height = 1.2f;
             // falling at set speed
@@ -231,7 +231,7 @@ public class PlayerLocomotion : MonoBehaviour
         targetPosition = myTransform.position;
 
 
-        // Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+        Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
         if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, ignoreForGroundCheck))
         {
             normalVector = hit.normal;
@@ -242,7 +242,7 @@ public class PlayerLocomotion : MonoBehaviour
             if (playerManager.isInAir)
             {
                 // if in air more than 0.5 sec start falling
-                if (inAirTimer > 0.15f)
+                if (inAirTimer > 0.1f)
                 {
                     Debug.Log("You were in the air for " + inAirTimer);
                     animatorHandler.PlayTargetAnimation("Land", true);

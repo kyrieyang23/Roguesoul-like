@@ -63,8 +63,8 @@ public class CameraHandler : MonoBehaviour
     }
 
     private void Update() {
-        Debug.DrawLine(transform.position, cameraPivotTransform.position, Color.red);
-        Debug.DrawLine(cameraPivotTransform.position, cameraTransform.position, Color.red);
+        // Debug.DrawLine(transform.position, cameraPivotTransform.position, Color.red);
+        // Debug.DrawLine(cameraPivotTransform.position, cameraTransform.position, Color.red);
     }
 
     public void FollowTarget(float delta)
