@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab7650e258b3b1242b0b3ecd511bd826, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab7650e258b3b1242b0b3ecd511bd826, type: 3}
       propertyPath: m_LocalScale.x
@@ -4842,7 +4842,7 @@ RectTransform:
   - {fileID: 1424149053}
   - {fileID: 1994768411}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9035,8 +9035,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5e4a41ed615cc40c79389b1223952eb7, type: 2}
     - target: {fileID: 3954966874282628083, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
+      propertyPath: shiftForwardRayDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954966874282628083, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
+      propertyPath: groundDirectionRayDistance
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954966874282628083, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
       propertyPath: minimumDistanceNeededToBeginFall
-      value: 0.45
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3954966874282628085, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
       propertyPath: m_UseGravity

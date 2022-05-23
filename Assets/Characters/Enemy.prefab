@@ -4313,7 +4313,9 @@ MonoBehaviour:
   maxStamina: 0
   currentStamina: 0
   isDead: 0
+  dead: {fileID: 9158417281050559981, guid: 266cbc37ec5ef459099baf46899fbc36, type: 3}
   enemyHealthBar: {fileID: 782319080599284021}
+  material: {fileID: 0}
 --- !u!1 &782319081962942723
 GameObject:
   m_ObjectHideFlags: 0

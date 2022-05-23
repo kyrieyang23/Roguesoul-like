@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
                 weaponSlotManager.DrainStaminaLightAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Light_Attack_02, true);
                 lastAttack = weapon.OH_Light_Attack_02;
-                Debug.Log("Light Attack 2");
+                // Debug.Log("Light Attack 2");
             }
             else if ((lastAttack == weapon.OH_Light_Attack_02) && (inputManager.lattackInput))
             {
@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
                 weaponSlotManager.DrainStaminaHeavyAttack();
                 animationHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_02, true);
                 lastAttack = weapon.OH_Heavy_Attack_02;
-                Debug.Log("Heavy Attack 2");
+                // Debug.Log("Heavy Attack 2");
             }
             else if ((lastAttack == weapon.OH_Heavy_Attack_02) && (inputManager.hattackInput))
             {
