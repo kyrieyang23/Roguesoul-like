@@ -5265,6 +5265,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1201902390434586171, guid: bf5e8bf00561c934eb2c8c4ed7a408cc, type: 3}
+--- !u!114 &1107504890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3954966874282628080, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
+  m_PrefabInstance: {fileID: 3954966873583936128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba3816322ed54768ab1762b66ca8f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1109689741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: c35bf9baa5ec51d47a132a78b5b2b65a, type: 3}
@@ -7018,6 +7029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 782319081947050382, guid: 773b35ab20f464932b1517ccccd1e2b9, type: 3}
   numberOfEnemy: 2
+  playerStats: {fileID: 1107504890}
+  Black: {fileID: 0}
 --- !u!4 &1687124524
 Transform:
   m_ObjectHideFlags: 0
@@ -9009,6 +9022,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2057341418}
+    - target: {fileID: 3954966874282628080, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
+      propertyPath: healthLevel
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3954966874282628081, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[0]
       value: 
