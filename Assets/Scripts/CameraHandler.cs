@@ -182,12 +182,12 @@ public class CameraHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("no lock on targets found A");
+                // Debug.Log("no lock on targets found A");
             }
         }
         else
         {
-            Debug.Log("no lock on targets found B");
+            // Debug.Log("no lock on targets found B");
         }
     }
 

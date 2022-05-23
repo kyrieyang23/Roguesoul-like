@@ -213,7 +213,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 GetComponent<Rigidbody>().AddForce(moveDirection * 20f);
             }
-            GetComponent<CapsuleCollider>().height = 1.2f;
+            GetComponent<CapsuleCollider>().height = 1f;
             // falling at set speed
             GetComponent<Rigidbody>().AddForce(-Vector3.up * fallingSpeed);
             // falling forward speed
@@ -241,19 +241,22 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (playerManager.isInAir)
             {
-                // if in air more than 0.5 sec start falling
-                if (inAirTimer > 0.1f)
-                {
-                    Debug.Log("You were in the air for " + inAirTimer);
-                    animatorHandler.PlayTargetAnimation("Land", true);
-                    inAirTimer = 0;
-                }
-                // if less then play locomotion
-                else
-                {
-                    animatorHandler.PlayTargetAnimation("Locomotion", false);
-                    inAirTimer = 0;
-                }
+                Debug.Log("You were in the air for " + inAirTimer);
+                animatorHandler.PlayTargetAnimation("Land", true);
+                inAirTimer = 0;
+                // // if in air more than 0.5 sec start falling
+                // if (inAirTimer > 0.08f)
+                // {
+                //     Debug.Log("You were in the air for " + inAirTimer);
+                //     animatorHandler.PlayTargetAnimation("Land", true);
+                //     inAirTimer = 0;
+                // }
+                // // if less then play locomotion
+                // else
+                // {
+                //     animatorHandler.PlayTargetAnimation("Rolling", true);
+                //     inAirTimer = 0;
+                // }
 
                 playerManager.isInAir = false;
             }
