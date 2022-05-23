@@ -6,6 +6,7 @@ public class EnemyStats : CharacterStats
 {
     // Start is called before the first frame update
     EnermyAnimationHandler animator;
+    public GameObject dead;
     public EnemyHealthBar enemyHealthBar;
     [SerializeField] private Material material;
     private float dissolveAmount = -1f;
@@ -44,9 +45,9 @@ public class EnemyStats : CharacterStats
         {
             // play dead
             currentHealth = 0;
-            animator.PlayTargetAnimation("Dead_01", true);
             isDead = true;
-            Destroy(gameObject,2);
+            Instantiate(dead, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
