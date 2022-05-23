@@ -27,7 +27,7 @@ MonoBehaviour:
     max: 1
   clamp:
     m_OverrideState: 1
-    m_Value: 0.007
+    m_Value: 0.0017
     min: 0
     max: 0.2
 --- !u!114 &-3212948952111119807

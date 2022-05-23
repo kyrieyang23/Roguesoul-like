@@ -3927,8 +3927,8 @@ MonoBehaviour:
   cameraSphereRadius: 0.2
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
-  lockedPivotPosition: 1.8
-  unlockedPivotPosition: 1.3
+  lockedPivotPosition: 1.5
+  unlockedPivotPosition: 1
   currentLockOnTarget: {fileID: 0}
   nearestLockOnTarget: {fileID: 0}
   leftLockTarget: {fileID: 0}
@@ -7003,7 +7003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1687124523
 MonoBehaviour:
   m_ObjectHideFlags: 0
