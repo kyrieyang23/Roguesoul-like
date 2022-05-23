@@ -59,7 +59,7 @@ public class SCR_UiInteraction : MonoBehaviour
             }
  
             else if (ui_element.name == "QuitGame") {
-                // Application.Quit(); 
+                Application.Quit(); 
                 Debug.Log("quiting");
             }
 
