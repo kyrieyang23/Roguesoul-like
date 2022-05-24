@@ -4063,9 +4063,9 @@ MonoBehaviour:
   enviromentLayer:
     serializedVersion: 2
     m_Bits: 0
-  lookSpeed: 0.17
+  lookSpeed: 0.29
   followSpeed: 0.1
-  pivotSpeed: 0.12
+  pivotSpeed: 0.3
   minimumPivot: -35
   maximumPivot: 35
   cameraSphereRadius: 0.2
@@ -9197,6 +9197,10 @@ PrefabInstance:
     - target: {fileID: 3954966874282628080, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
       propertyPath: healthLevel
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954966874282628080, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
+      propertyPath: staminaRegenerationAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3954966874282628081, guid: 06c7510e41a44496181a2bfa6c73385e, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[0]

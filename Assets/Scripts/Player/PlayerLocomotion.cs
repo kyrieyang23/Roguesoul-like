@@ -50,7 +50,7 @@ public class PlayerLocomotion : MonoBehaviour
     public CapsuleCollider characterCollisionBlockerCollider;
 
     int rollStaminaCost = 15;
-    int sprintStaminaCost = 1;
+    int sprintStaminaCost = 10;
 
     private void Start()
     {
@@ -103,7 +103,7 @@ public class PlayerLocomotion : MonoBehaviour
         float speed = movementSpeed;
         if (isSprinting)
         {
-            if (playerStats.currentStamina <= 0)
+            if (playerStats.currentStamina <= 0 || playerManager.isInAir)
             {
                 return;
             }
@@ -241,10 +241,10 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (playerManager.isInAir)
             {
-                Debug.Log("You were in the air for " + inAirTimer);
+                // Debug.Log("You were in the air for " + inAirTimer);
                 animatorHandler.PlayTargetAnimation("Land", true);
                 inAirTimer = 0;
-                // // if in air more than 0.5 sec start falling
+                // if in air more than 0.5 sec start falling
                 // if (inAirTimer > 0.08f)
                 // {
                 //     Debug.Log("You were in the air for " + inAirTimer);
